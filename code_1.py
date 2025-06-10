@@ -15,8 +15,8 @@ Phân tích các bài đánh giá game từ người chơi thực tế, bao gồ
 
 # Load mô hình và vectorizer một cách an toàn
 model, vectorizer = None, None
-model_path = "trained/game_rating_model.pkl"
-vectorizer_path = "trained/tfidf_vectorizer.pkl"
+model_path = "game_rating_model_compressed5.pkl"
+vectorizer_path = "tfidf_vectorizer.pkl"
 
 try:
     if os.path.exists(model_path) and os.path.exists(vectorizer_path):
@@ -28,7 +28,7 @@ except Exception as e:
     st.error(f"❌ Lỗi khi load mô hình: {e}")
 
 # Load dữ liệu
-CSV_PATH = "sample_pred_results.csv"
+CSV_PATH = "sample_pred_results10k.csv"
 
 @st.cache_data
 def load_data():
